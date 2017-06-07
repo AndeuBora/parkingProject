@@ -10,6 +10,7 @@
 </head>
 <body>
 <<<<<<< HEAD
+<<<<<<< HEAD
 
 <header>
 <div id="img"></div>
@@ -33,5 +34,8 @@
 	<a href="join/memberJoin.do">회원가입</a>
 	<a href="booking/selectBookingSpot.do">예약</a>
 >>>>>>> origin/taejun
+=======
+	<a href="info/parkingInfo.do">주차장 정보</a>
+>>>>>>> origin/Baekseunghwan
 </body>
 </html>

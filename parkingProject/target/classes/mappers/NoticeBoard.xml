@@ -1,42 +1,7 @@
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-=======
->>>>>>> origin/Baekseunghwan
 <?xml version="1.0" encoding="UTF-8" ?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
   "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 
-<<<<<<< HEAD
-<mapper namespace="BookingMapper">
-
-	<select id="selectBookingSpot" parameterType="com.parking.booking.vo.BookingVO"
-		resultType="com.parking.booking.vo.BookingVO">
-		select bookingSpot
-		from booking
-		where bookingDate = #{selectDate}
-	</select>
-</mapper>
-=======
-=======
->>>>>>> origin/master
-<?xml version="1.0" encoding="UTF-8" ?>
-<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
-  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
-
-<mapper namespace="BookingMapper">
-
-	<select id="selectBookingSpot" parameterType="com.parking.booking.vo.BookingVO"
-		resultType="com.parking.booking.vo.BookingVO">
-		select bookingSpot from booking where bookingDate =
-		${selectDate}
-	</select>
-</mapper>
-<<<<<<< HEAD
->>>>>>> origin/taejun
-=======
->>>>>>> origin/master
-=======
 <mapper namespace="#package.#mapperinterfacename">
 
 	<select id="getSomething" parameterType="int" resultType="#package.#modelname">
@@ -77,4 +42,3 @@
 	</delete>
 
 </mapper>
->>>>>>> origin/Baekseunghwan
