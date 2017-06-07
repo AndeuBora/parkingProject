@@ -1,5 +1,5 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
-    pageEncoding="UTF-8"%>
+	pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html>
 <head>
@@ -9,6 +9,7 @@
 <title>Insert title here</title>
 </head>
 <body>
+
 <header>
 <div id="img"></div>
 <nav id="login"></nav>
@@ -24,5 +25,8 @@
 <div id="info"></div>
 
 </footer>
+
+	<a href="booking/selectBookingSpot.do">[ 게시판 ]</a>
+
 </body>
 </html>
