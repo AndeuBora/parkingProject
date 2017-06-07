@@ -1,0 +1,30 @@
+@CHARSET "UTF-8";
+
+header {
+	border="1";
+	height: 15%;
+	width: 90%;
+}
+
+footer {
+	border="1";
+	height: 10%;
+	width: 90%;
+}
+
+#info {border="1";
+	width: 70%;
+}
+
+#img {border="1";
+	width: 20%;
+}
+
+#login {border="1";
+	height: 10%;
+}
+
+#manu {border="1";
+	height: 90%;
+	width: 80%;
+}

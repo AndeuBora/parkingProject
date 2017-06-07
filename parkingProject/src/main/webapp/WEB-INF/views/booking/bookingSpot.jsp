@@ -9,7 +9,7 @@
 <body>
 	<section>
 		<div id="choiceDate">
-		<h3>1.날짜선택<img src="" alt="날짜선택"></h3>
+		<h3>1.날짜선택<img src="img/booking/can" alt="날짜선택"></h3>
 		</div>
 		<div id="choiceSpot">
 		
