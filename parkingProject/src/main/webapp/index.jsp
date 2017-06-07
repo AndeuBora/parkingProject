@@ -7,6 +7,7 @@
 <title>Insert title here</title>
 </head>
 <body>
-	<a href="booking/selectBookingSpot.do">[ 게시판 ]</a>
+	<a href="join/memberJoin.do">회원가입</a>
+	<a href="booking/selectBookingSpot.do">예약</a>
 </body>
 </html>
