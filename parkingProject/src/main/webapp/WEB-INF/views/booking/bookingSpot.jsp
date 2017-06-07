@@ -15,7 +15,11 @@
 	<section>
 		<div id="choiceDate">
 			<h3>
+<<<<<<< HEAD
 				1.날짜선택<img src="/resources/img/booking/calendar.png" alt="날짜선택" >
+=======
+				1.날짜선택<img src="/resources/img/booking/calender.png" alt="날짜선택">
+>>>>>>> origin/taejun
 			</h3>
 		</div>
 		<div id="choiceSpot">
