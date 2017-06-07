@@ -9,10 +9,12 @@
 <body>
 	<section>
 		<div id="choiceDate">
-		<h3>1.날짜선택<img src="img/booking/can" alt="날짜선택"></h3>
+			<h3>
+				1.날짜선택<img src="img/booking/calender.png" alt="날짜선택">
+			</h3>
 		</div>
 		<div id="choiceSpot">
-		
+			<h3>2. 자리선택</h3>
 		</div>
 	</section>
 </body>
