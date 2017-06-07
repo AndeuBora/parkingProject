@@ -20,8 +20,8 @@
 
 #info {
 	border: 1px solid red;
-	float: none;
-	width: 15%;
+	float: left;
+	width: 200px;
 }
 
 .redtext {
@@ -30,13 +30,18 @@
 
 .only {
 	border: 0px;
-	width: 100px;
+	width: 200px;
 	margin-left: 10px;
 }
 
 #spot div {
 	clear: both;
 }
+
+#next {
+	clear: both;
+}
+
 /* 자리 */
 #spot div button {
 	float: left;
