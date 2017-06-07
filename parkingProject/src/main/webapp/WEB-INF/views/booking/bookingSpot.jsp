@@ -15,7 +15,7 @@
 	<section>
 		<div id="choiceDate">
 			<h3>
-				1.날짜선택<img src="/res/img/booking/calender.png" alt="날짜선택">
+				1.날짜선택<img src="/resources/img/booking/calendar.png" alt="날짜선택" >
 			</h3>
 		</div>
 		<div id="choiceSpot">

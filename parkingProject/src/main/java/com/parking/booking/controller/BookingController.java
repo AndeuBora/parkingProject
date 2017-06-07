@@ -18,11 +18,13 @@ public class BookingController {
 	private BookingService bookingService;
 
 	// 예약자리조회
-	@RequestMapping(value="/selectBookingSpot")
-	public String selectBookingSpot(@ModelAttribute BookingVO vo, Model model) {
-		System.out.println("예약자리조회 메소드 호출");
-		List<BookingVO> spotlist = bookingService.selectBookingSpot(vo);
-		model.addAttribute("spotlist", spotlist);
+	@RequestMapping(value = "/selectBookingSpot")
+	public String selectBookingSpot() {
+		/*
+		 * System.out.println("예약자리조회 메소드 호출"); List<BookingVO> spotlist =
+		 * bookingService.selectBookingSpot(vo); model.addAttribute("spotlist",
+		 * spotlist);
+		 */
 		return "booking/bookingSpot";
 	}
 }

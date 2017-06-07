@@ -6,7 +6,8 @@
 
 	<select id="selectBookingSpot" parameterType="com.parking.booking.vo.BookingVO"
 		resultType="com.parking.booking.vo.BookingVO">
-		select bookingSpot from booking where bookingDate =
-		${selectDate}
+		select bookingSpot
+		from booking
+		where bookingDate = #{selectDate}
 	</select>
 </mapper>
