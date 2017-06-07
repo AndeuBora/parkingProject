@@ -1,1 +1,37 @@
 @CHARSET "UTF-8";
+
+#choiceSpot {
+	border: 1px solid black;
+}
+
+#spot {
+	border: 1px solid red;
+	width: 80%;
+	float: left;
+	padding-left: 5%;
+}
+
+#description {
+	border: 1px solid red;
+	width: 15%;
+	float: right;
+}
+
+#description {
+	border: 1px solid red;
+	width: 15%;
+	float: right;
+}
+
+.redtext {
+	color: red;
+}
+
+/* 자리 */
+#spot div div {
+	float: left;
+    width: 50px;
+    height: 30px;
+    margin: 5px;
+    border: 3px solid #73AD21;
+}
