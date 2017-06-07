@@ -1,5 +1,5 @@
 package com.parking.noticeBoard.service;
 
-public class NoticeBoardServiceImpl {
+public class NoticeBoardServiceImpl implements NoticeBoardService {
 
 }

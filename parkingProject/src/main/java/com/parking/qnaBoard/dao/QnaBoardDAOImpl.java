@@ -1,5 +1,5 @@
 package com.parking.qnaBoard.dao;
 
-public class QnaBoardDAOImpl {
+public class QnaBoardDAOImpl implements QnaBoardDAO {
 
 }

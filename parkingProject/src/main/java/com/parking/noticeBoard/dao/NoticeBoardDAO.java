@@ -1,5 +1,5 @@
 package com.parking.noticeBoard.dao;
 
-public class NoticeBoardDAO {
+public interface NoticeBoardDAO {
 
 }
