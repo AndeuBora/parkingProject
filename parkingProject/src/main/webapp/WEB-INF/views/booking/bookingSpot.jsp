@@ -6,12 +6,17 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <link href="/resources/css/booking.css" type="text/css" rel="stylesheet">
-<link rel="stylesheet"
-	href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
 <script src="http://code.jquery.com/jquery-latest.js"></script>
-<!-- 추가 -->
-<script src="//code.jquery.com/jquery-1.12.4.js"></script>
-<script src="//code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+
+<!-- jQuery UI CSS파일  -->
+<link rel="stylesheet"
+	href="http://code.jquery.com/ui/1.8.18/themes/base/jquery-ui.css"
+	type="text/css" />
+<!-- jQuery 기본 js파일 -->
+<script
+	src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
+<!-- jQuery UI 라이브러리 js파일 -->
+<script src="http://code.jquery.com/ui/1.8.18/jquery-ui.min.js"></script>
 <script type="text/javascript">
 	$(function() {
 		$("#datepicker").datepicker({
@@ -27,7 +32,7 @@
 		<div id="choiceDate">
 			<h3>
 				1.날짜선택<img src="/resources/img/booking/calendar.png" alt="날짜선택"
-					id="deteimg">
+					id="deteimg" height="25px" width="25px">
 			</h3>
 		</div>
 		<div id="choiceSpot">
