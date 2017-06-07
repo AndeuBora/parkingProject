@@ -1,18 +1,5 @@
-<<<<<<< HEAD
-<<<<<<< HEAD
-Manifest-Version: 1.0
-Built-By: baekseunghwan
-Build-Jdk: 1.8.0_131
-Created-By: Maven Integration for Eclipse
-
-=======
 Manifest-Version: 1.0
 Built-By: alfo7-8
-=======
-Manifest-Version: 1.0
-Built-By: alfo7-16
->>>>>>> origin/ilhyun
 Build-Jdk: 1.8.0_131
 Created-By: Maven Integration for Eclipse
 
->>>>>>> origin/taejun
