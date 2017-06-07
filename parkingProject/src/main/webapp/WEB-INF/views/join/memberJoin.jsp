@@ -11,6 +11,12 @@
 <title>회원가입 페이지</title>
 </head>
 <body>
+<div id="wrapper">
+<section id="joinFormSection">
 
+
+
+</section>
+</div>
 </body>
 </html>
