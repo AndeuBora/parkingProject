@@ -17,11 +17,7 @@
 	<!-- myBatis 셋팅 (sqlSessionFactory,sqlSession) -->
 	<bean id="sqlSessionFactory" class="org.mybatis.spring.SqlSessionFactoryBean">
 		<property name="dataSource" ref="dataSource" />
-<<<<<<< HEAD
-	<!-- 	<property name="mapperLocations" value="classpath:mappers/**.xml" /> -->
-=======
 		<!-- <property name="mapperLocations" value="classpath:mappers/**.xml" /> -->
->>>>>>> origin/Baekseunghwan
 	</bean>
 	<bean id="sqlSession" class="org.mybatis.spring.SqlSessionTemplate"
 		destroy-method="clearCache">
