@@ -1,5 +1,5 @@
 package com.parking.payment.dao;
 
-public class PaymentDAO {
+public interface PaymentDAO {
 
 }
