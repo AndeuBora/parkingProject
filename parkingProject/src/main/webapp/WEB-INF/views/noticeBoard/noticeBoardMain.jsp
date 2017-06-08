@@ -13,78 +13,42 @@
 </head>
 <body>
 	<section>
-		<div id="noticeBoardMainTitle">
-			<h2>공지사항</h2>
-		</div>
-		<div id="noticeBoardMainContent">
-			<table>
-				<tr>
-					<th>번호</th>
-					<th>제목</th>
-					<th>등록일</th>
-					<th>조회수</th>
-				</tr>
-				<tr>
-					<td></td>
-					<td></td>
-					<td></td>
-					<td></td>
-				</tr>
-				<tr>
-					<td></td>
-					<td></td>
-					<td></td>
-					<td></td>
-				</tr>
-				<tr>
-					<td></td>
-					<td></td>
-					<td></td>
-					<td></td>
-				</tr>
-				<tr>
-					<td></td>
-					<td></td>
-					<td></td>
-					<td></td>
-				</tr>
-				<tr>
-					<td></td>
-					<td></td>
-					<td></td>
-					<td></td>
-				</tr>
-				<tr>
-					<td></td>
-					<td></td>
-					<td></td>
-					<td></td>
-				</tr>
-				<tr>
-					<td></td>
-					<td></td>
-					<td></td>
-					<td></td>
-				</tr>
-				<tr>
-					<td></td>
-					<td></td>
-					<td></td>
-					<td></td>
-				</tr>
-				<tr>
-					<td></td>
-					<td></td>
-					<td></td>
-					<td></td>
-				</tr>
-				<tr>
-					<td></td>
-					<td></td>
-					<td></td>
-					<td></td>
-				</tr>
-			</table>
+		<div id="noticeBoardMainContainer">
+			<div id="noticeBoardMainTitle">
+				<h2>공지사항</h2>
+			</div>
+			<div id="noticeBoardMainContent">
+				<table>
+					<thead>
+						<tr>
+							<th>번호</th>
+							<th>제목</th>
+							<th>등록일</th>
+							<th>조회수</th>
+						</tr>
+					</thead>
+					<tbody>
+						<c:choose>
+							<c:when test="${not empty noticeBoardList}">
+								<c:forEach var="noticeBoardList" items="${noticeBoardList}"
+									varStatus="status">
+									<tr>
+										<td>${noticeBoardList.noticenum}</td>
+										<td><span class="noticeBoardDetail">${noticeBoardList.noticetitle}</span></td>
+										<td>${noticeBoardList.noticewritedate}</td>
+										<td>${noticeBoardList.noticecount}</td>
+									</tr>
+								</c:forEach>
+							</c:when>
+							<c:otherwise>
+								<tr>
+									<td colspan="4">등록된 게시물이 존재하지 않습니다.</td>
+								</tr>
+							</c:otherwise>
+						</c:choose>
+					</tbody>
+				</table>
+			</div>
 		</div>
 	</section>
 </body>
