@@ -1,5 +1,9 @@
 package com.parking.noticeBoard.service;
 
-public interface NoticeBoardService {
+import java.util.List;
 
+import com.parking.noticeBoard.vo.NoticeBoardVO;
+
+public interface NoticeBoardService {
+	public List<NoticeBoardVO> noticeBoardList(NoticeBoardVO nvo);
 }
