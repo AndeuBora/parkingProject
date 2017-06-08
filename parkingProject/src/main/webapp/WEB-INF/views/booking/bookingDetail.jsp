@@ -54,11 +54,11 @@
 				discount = "긴급자동차";
 				discountPrice = 30000;
 			}
-			alert("discount" + discount);
+			alert("discount=" + discount);
 			result = result - discountPrice;
-			alert("result" + result);
+			alert("result=" + result);
 			$("#bookingDiscountMoney").html(discountPrice);
-			$("#bookingDiscount").html(discount);
+			$("#discountState").html(discount);
 			$("#totalBookingMoney").html(result);
 		});
 	});
@@ -96,19 +96,57 @@
 				return;
 			}
 		}
+		if ($("#bookingPolicy1").is(":checked") == false) {
+			alert("약관동의는 필수입니다.");
+			$("#bookingPolicy1").focus();
+			return
+		}
+		if ($("#bookingPolicy2").is(":checked") == false) {
+			alert("약관동의는 필수입니다.");
+			$("#bookingPolicy2").focus();
+			return
+		}
+		ajaxExample();
 		window.open("bookingCheckAgain.do", "popup", "width=700,height=800");
 	}
 	function backBookingSpot() {
 		location.href = "selectBookingSpot.do";
 	}
+	function ajaxExample() {
+		//예약자성명
+		//예약자연락처
+		//요금감면혜택
+		//결제금액
+		//날짜
+		//자리
+		var bookingName = $("#s_bookingName").val();
+		var bookingPhone = $("#s_bookingPhone").val();
+		var discountState = $("#discountState").html();
+		var totalBookingMoney = $("#totalBookingMoney").html();
+		var Data = {
+				"bookingName":bookingName,
+				"bookingPhone":bookingPhone,
+				"discountState":discountState,
+				"totalBookingMeney":totalBookingMoney
+		}
+		$.ajax({
+			  url:"bookingCheckAgain.do",
+		        type:'GET',
+		        data: Data,
+		        success:function(data){
+		            alert("완료!");
+		            window.opener.location.reload();
+		            self.close();
+		        },
+		        error:function(jqXHR, textStatus, errorThrown){
+		            alert("에러 발생~~ \n" + textStatus + " : " + errorThrown);
+		            self.close();
+		        }
+		});
+	}
 </script>
 </head>
 <body>
-	<form id="bookingInfo_f">
-		<input type="hidden" name="bookingDate" id="bookingDate"> <input
-			type="hidden" name="bookingPhone" id="bookingPhone"> <input
-			type="hidden" name="bookingDiscount" id="bookingDiscount">
-	</form>
 	<div id="bookingDetail_1">
 		<h3>3.예약정보</h3>
 		<table>
@@ -188,8 +226,8 @@
 					class="bookingMoneyInfo redtext">0</span>원</td>
 			</tr>
 			<tr>
-				<td>요금감면혜택 종류</td>
-				<td><span id="bookingDiscount" class="bookingMoneyInfo redtext">없음</span></td>
+				<td>총 결제금액</td>
+				<td><span id="discountState" class="bookingMoneyInfo boldfont">없음</span></td>
 			</tr>
 			<tr>
 				<td>총 결제금액</td>

@@ -1,6 +1,9 @@
 package com.parking.booking.controller;
 
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
 import java.util.ArrayList;
+import java.util.Date;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -36,21 +39,39 @@ public class BookingController {
 		memberInfo.add("안드보라");
 		memberInfo.add("010-4245-0220");
 
+		// String->date
+		SimpleDateFormat format = new java.text.SimpleDateFormat("yyyy-MM-dd");
+		Date date = null;
+		try {
+			date = format.parse(bookingDate);
+		} catch (ParseException e) {
+			e.printStackTrace();
+		}
+
+		// vo값 저장
+		BookingVO vo = new BookingVO();
+		vo.setBookingDate(date);
+		vo.setBookingSpot(bookingSpot);
+
+		// list 저장
+		List<BookingVO> bookingList = new ArrayList<>();
+		bookingList.add(vo);
+
 		// 값보내기
-		model.addAttribute("bookingDate", bookingDate);
-		model.addAttribute("bookingSpot", bookingSpot);
+		model.addAttribute("bookingList", bookingList);
 		model.addAttribute("memberInfo", memberInfo);
 
 		// 출력
-		System.out.println("bookingDate" + bookingDate);
-		System.out.println("bookingSpot" + bookingSpot);
-		System.out.println("bookingSpot" + memberInfo.get(1).toString());
+		System.out.println("bookingList=" + bookingList.toString());
 		return "booking/bookingDetail";
 	}
 
 	// 재차확인페이지
 	@RequestMapping(value = "/bookingCheckAgain")
-	public String bookingCheckAgain() {
+	public String bookingCheckAgain(@RequestParam("bookingName") String bookingName,
+			@RequestParam("bookingPhone") String bookingPhone, @RequestParam("discountState") String discountState,
+			@RequestParam("totalBookingMeney") String totalBookingMeney, Model model) {
+		// vo값 저장-------------------------------------
 		return "booking/bookingCheckAgain";
 	}
 
