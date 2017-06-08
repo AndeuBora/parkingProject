@@ -13,4 +13,7 @@ public class MemberJoinController {
 		return "join/memberJoin";
 	}
 	
+
+	
+	
 }
