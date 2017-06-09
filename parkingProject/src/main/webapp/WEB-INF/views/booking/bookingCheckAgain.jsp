@@ -10,8 +10,8 @@
 </head>
 <body>
 	<%
-		long coad = System.currentTimeMillis();
 		request.setCharacterEncoding("utf-8");
+		long coad = System.currentTimeMillis();
 		String name = request.getParameter("address");
 	%>
 	<form action="booking/booking" method="post">
