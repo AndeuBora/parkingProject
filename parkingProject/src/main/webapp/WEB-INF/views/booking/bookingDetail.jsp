@@ -17,7 +17,6 @@
 			var discount = "";
 			var discountPrice = 0;
 			var result = 30000;
-			alert(selectDiscount);
 			if (selectDiscount == "0") {
 				discount = "없음";
 				discountPrice = 0;
@@ -54,9 +53,7 @@
 				discount = "긴급자동차";
 				discountPrice = 30000;
 			}
-			alert("discount=" + discount);
 			result = result - discountPrice;
-			alert("result=" + result);
 			$("#bookingDiscountMoney").html(discountPrice);
 			$("#discountState").html(discount);
 			$("#totalBookingMoney").html(result);
@@ -109,41 +106,54 @@
 		ajaxExample();
 		window.open("bookingCheckAgain.do", "popup", "width=700,height=800");
 	}
-	function backBookingSpot() {
-		location.href = "selectBookingSpot.do";
-	}
 	function ajaxExample() {
-		//예약자성명
-		//예약자연락처
-		//요금감면혜택
-		//결제금액
-		//날짜
-		//자리
-		var bookingName = $("#s_bookingName").val();
-		var bookingPhone = $("#s_bookingPhone").val();
-		var discountState = $("#discountState").html();
-		var totalBookingMoney = $("#totalBookingMoney").html();
-		var Data = {
-				"bookingName":bookingName,
-				"bookingPhone":bookingPhone,
-				"discountState":discountState,
-				"totalBookingMeney":totalBookingMoney
-		}
-		$.ajax({
-			  url:"bookingCheckAgain.do",
-		        type:'GET',
-		        data: Data,
-		        success:function(data){
-		            alert("완료!");
-		            window.opener.location.reload();
-		            self.close();
-		        },
-		        error:function(jqXHR, textStatus, errorThrown){
-		            alert("에러 발생~~ \n" + textStatus + " : " + errorThrown);
-		            self.close();
-		        }
-		});
-	}
+        //예약자
+        var bookingName = $("#s_bookingName").val();
+        var bookingPhone = $("#s_bookingPhone").val();
+        var discountState = $("#discountState").html();
+        var totalBookingMoney = $("#totalBookingMoney").html();
+       var bookingDate = $("#bookingDate").val();
+       var bookingSpot = $("#bookingSpot").val();
+        //보낼값 저장
+        var Data = {
+              "bookingName":bookingName,
+              "bookingPhone":bookingPhone,
+              "bookingDiscount":discountState,
+              "bookingMoney":totalBookingMoney,
+              "bookingDate":bookingDate,
+              "bookingSpot":bookingSpot
+        }
+        $.ajax({
+             url:"bookingCheckAgain.do",
+                type:'get',
+                data: Data,
+                success:function(data){
+                   alert("성공!!!");
+                },
+                error:function(request,status,error){
+                    alert("code :"+request.status+"\n"+"message :"+request.responseText+"\n"+"error:"+error);
+                }
+        });
+     }
+	/* //값보내기
+	function goDate() {
+		   //예약자값
+        var bookingName = $("#s_bookingName").val();
+	    var bookingPhone = $("#s_bookingPhone").val();
+	    var bookingDiscount = $("#discountState").html();
+	    var bookingMoney = $("#totalBookingMoney").html();
+	      $("#bookingName").val(bookingName);
+	      $("#bookingPhone").val(bookingPhone);
+	      $("#bookingDiscount").val(bookingDiscount);
+	      $("#bookingMoney").val(bookingMoney);
+	      alert("bookingName"+$("#bookingName").val());
+	      $("#f_booking").attr({
+	         "method" : "post",
+	         "action" : "bookingCheck.do"
+	      });
+	      $("#f_booking").submit();
+	   } */
+	
 </script>
 </head>
 <body>
@@ -283,5 +293,16 @@
 		<input type="button" value="이전" onclick="backBookingSpot()"> <input
 			type="button" value="다음" onclick="popup_bookingCheckAgain()">
 	</div>
+	<form id="f_booking">
+		<!-- 날짜/자리 -->
+		<input type="hidden" name="bookingDate" id="bookingDate"
+			value="${ bookingInfo[0]}"> <input type="hidden"
+			name="bookingSpot" id="bookingSpot" value="${ bookingInfo[1]}">
+		<!-- 예약정보 -->
+		<input type="hidden" name="bookingName" id="bookingName"> <input
+			type="hidden" name="bookingPhone" id="bookingPhone"> <input
+			type="hidden" name="bookingDiscount" id="bookingDiscount"> <input
+			type="hidden" name="bookingMoney" id="bookingMoney">
+	</form>
 </body>
 </html>

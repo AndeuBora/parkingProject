@@ -11,6 +11,7 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 
 import com.parking.booking.service.BookingService;
@@ -34,45 +35,62 @@ public class BookingController {
 	public String bookingDetail(@RequestParam("bookingDate") String bookingDate,
 			@RequestParam("bookingSpot") String bookingSpot, Model model) {
 
-		// 있다고 가정-------------회원 insert되면 받아오기
+		// 있다고 가정-------------회원이름, 회원전화번호
 		List<String> memberInfo = new ArrayList<>();
 		memberInfo.add("안드보라");
 		memberInfo.add("010-4245-0220");
 
-		// String->date
-		SimpleDateFormat format = new java.text.SimpleDateFormat("yyyy-MM-dd");
-		Date date = null;
-		try {
-			date = format.parse(bookingDate);
-		} catch (ParseException e) {
-			e.printStackTrace();
-		}
-
-		// vo값 저장
-		BookingVO vo = new BookingVO();
-		vo.setBookingDate(date);
-		vo.setBookingSpot(bookingSpot);
-
 		// list 저장
-		List<BookingVO> bookingList = new ArrayList<>();
-		bookingList.add(vo);
+		List<String> bookingInfo = new ArrayList<>();
+		bookingInfo.add(bookingDate);
+		bookingInfo.add(bookingSpot);
 
 		// 값보내기
-		model.addAttribute("bookingList", bookingList);
+		model.addAttribute("bookingInfo", bookingInfo);
 		model.addAttribute("memberInfo", memberInfo);
 
-		// 출력
-		System.out.println("bookingList=" + bookingList.toString());
 		return "booking/bookingDetail";
 	}
 
 	// 재차확인페이지
-	@RequestMapping(value = "/bookingCheckAgain")
-	public String bookingCheckAgain(@RequestParam("bookingName") String bookingName,
-			@RequestParam("bookingPhone") String bookingPhone, @RequestParam("discountState") String discountState,
-			@RequestParam("totalBookingMeney") String totalBookingMeney, Model model) {
-		// vo값 저장-------------------------------------
+	@RequestMapping(value = "/bookingCheckAgain", method = RequestMethod.GET)
+	public String bookingCheckAgain(@ModelAttribute BookingVO vo, Model model) {
+		// 테스트출력
+		System.out.println("-----------------------------------1");
+		System.out.println("예약자 이름=" + vo.getBookingName());
+		System.out.println("예약자 전화=" + vo.getBookingPhone());
+		System.out.println("예약금액=" + vo.getBookingMoney());
+		System.out.println("예약할인=" + vo.getBookingDiscount());
+		System.out.println("예약날짜=" + vo.getBookingDate());
+		System.out.println("예약자리=" + vo.getBookingSpot());
+
+		// 신청일자
+		SimpleDateFormat format = new java.text.SimpleDateFormat("yyyy-MM-dd");
+		Date date = new Date();
+		String ApplicationDate = format.format(date);
+		System.out.println("신청날짜=" + ApplicationDate);
+		vo.setApplicationDate(ApplicationDate);
+
+		// 신청일자
+		vo.setApplicationDate(ApplicationDate);
+
+		// 예약번호
+		long coad = System.currentTimeMillis();
+		String BookingNum = String.valueOf(coad);
+		vo.setBookingNum(BookingNum);
+
+		// 있다고 가정-------------회원아이디,회원이름
+		List<String> memberInfo = new ArrayList<>();
+		memberInfo.add("dksemqh97");
+		memberInfo.add("안드보라");
+
+		// list 저장
+		List<BookingVO> bookingInfo = new ArrayList<>();
+		bookingInfo.add(vo);
+
+		// 값 보내기
+		model.addAttribute("bookingInfo", bookingInfo);
+		model.addAttribute("memberInfo", memberInfo);
 		return "booking/bookingCheckAgain";
 	}
-
 }
