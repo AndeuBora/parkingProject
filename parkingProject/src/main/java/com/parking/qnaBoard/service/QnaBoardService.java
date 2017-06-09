@@ -1,5 +1,7 @@
 package com.parking.qnaBoard.service;
 
-public interface QnaBoardService {
+import com.parking.qnaBoard.vo.QnaBoardVO;
 
+public interface QnaBoardService {
+	public int qnaBoardInsert(QnaBoardVO qvo);
 }

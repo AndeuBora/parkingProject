@@ -1,1 +1,108 @@
 @CHARSET "UTF-8";
+
+/* -----예약페이지1----- */
+#choiceSpot {
+	border: 1px solid black;
+	padding: 5px;
+}
+
+#spot {
+	border: 1px solid red;
+	width: 600px;
+	float: left;
+	padding: 15px;
+}
+
+#description {
+	border: 1px solid red;
+	width: 15%;
+	float: left;
+}
+
+#info {
+	border: 1px solid red;
+	float: left;
+	width: 200px;
+}
+
+.redtext {
+	color: red;
+}
+
+.only {
+	border: 0px;
+	width: 200px;
+	margin-left: 10px;
+}
+
+#spot div {
+	clear: both;
+}
+
+#nextBooking2 {
+	clear: both;
+	border: 1px solid red;
+	width: 8000px;
+	height: 50px;
+}
+
+#nextBooking2 >input {
+	margin: 0 auto;
+	border: 3px solid #28577d;
+	width: 70px;
+	height: 50px;
+	color: black;
+	background-color: white;
+}
+
+/* 자리 */
+#spot div button {
+	float: left;
+	width: 40px;
+	height: 50px;
+	margin: 5px;
+	border: 2px solid #404040;
+	background-color: white;
+}
+/* -----예약페이지2----- */
+#bookingDetail_1>table,tr,td {
+	border: 1px solid #404040;
+	border-collapse: collapse; 
+}
+
+#bookingDetail_2>table {
+	border-collapse: collapse; 
+}
+
+#booking_caution{
+	border: 1px solid #404040;
+}
+
+#booking_caution p {
+	font-size: 13px;
+	font-weight: bold; 
+}
+
+.bookingMoneyInfo{
+	border: 0px;
+	width: 100px;
+	margin-left: 10px;
+}
+
+/* 굵게표시 */
+.boldfont{
+	font-weight: bold; 
+}
+
+.selectBookingPolicy{
+	font-size: 13px;
+}
+
+#nextBooking3 > input {
+	margin: 0 auto;
+	border: 3px solid #28577d;
+	width: 70px;
+	height: 50px;
+	color: black;
+	background-color: white;
+}
