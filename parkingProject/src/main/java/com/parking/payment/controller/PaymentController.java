@@ -14,5 +14,14 @@ public class PaymentController {
 		return "payment/payment";
 	}
 	
+	
+	
+		
+		@RequestMapping(value="/paymentComplete")
+		public String paymentComplete(){
+			
+			return"payment/paymentComplete";
+		}
+	}
 
-}
+

@@ -1,5 +1,9 @@
 package com.parking.noticeBoard.dao;
 
-public interface NoticeBoardDAO {
+import java.util.List;
 
+import com.parking.noticeBoard.vo.NoticeBoardVO;
+
+public interface NoticeBoardDAO {
+	public List<NoticeBoardVO> noticeBoardList(NoticeBoardVO nvo);
 }
