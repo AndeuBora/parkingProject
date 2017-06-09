@@ -9,7 +9,7 @@
 	<bean id="dataSource" class="org.apache.commons.dbcp.BasicDataSource"
 		destroy-method="close">
 		<property name="driverClassName" value="oracle.jdbc.OracleDriver" />
-		<property name="url" value="jdbc:oracle:thin:192.168.0.61:1521:orcl" />
+		<property name="url" value="jdbc:oracle:thin:@192.168.0.61:1521:orcl" />
 		<property name="username" value="scott" />
 		<property name="password" value="tiger" />
 	</bean>
@@ -17,7 +17,8 @@
 	<!-- myBatis 셋팅 (sqlSessionFactory,sqlSession) -->
 	<bean id="sqlSessionFactory" class="org.mybatis.spring.SqlSessionFactoryBean">
 		<property name="dataSource" ref="dataSource" />
-	<!-- 	<property name="mapperLocations" value="classpath:mappers/**.xml" /> -->
+		<!-- <property name="mapperLocations" value="classpath:mappers/**.xml" 
+			/> -->
 	</bean>
 	<bean id="sqlSession" class="org.mybatis.spring.SqlSessionTemplate"
 		destroy-method="clearCache">
