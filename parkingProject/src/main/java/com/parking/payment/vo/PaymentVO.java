@@ -11,7 +11,7 @@ public class PaymentVO {
   private String cardCvc;//CVC
   private int paymentMoney;//결제금액
   private int paymentPolicy;//약관동의
-  private Date paymentDate;//결제날짜
+  private String paymentDate;//결제날짜
   private int paymentType;//결제종류
   private int paymentPenalty;//차액 부과금
   private int paymentState;//결제상황
@@ -19,7 +19,7 @@ public class PaymentVO {
   
   //생성자
   public PaymentVO(String paymentNum, String cardCompany, String cardNum, String cardValid, String cardCvc,
-		int paymentMoney, int paymentPolicy, Date paymentDate, int paymentType, int paymentPenalty, int paymentState) {
+		int paymentMoney, int paymentPolicy, String paymentDate, int paymentType, int paymentPenalty, int paymentState) {
 	super();
 	this.paymentNum = paymentNum;
 	this.cardCompany = cardCompany;
@@ -77,10 +77,10 @@ public int getPaymentPolicy() {
 public void setPaymentPolicy(int paymentPolicy) {
 	this.paymentPolicy = paymentPolicy;
 }
-public Date getPaymentDate() {
+public String getPaymentDate() {
 	return paymentDate;
 }
-public void setPaymentDate(Date paymentDate) {
+public void setPaymentDate(String paymentDate) {
 	this.paymentDate = paymentDate;
 }
 public int getPaymentType() {
