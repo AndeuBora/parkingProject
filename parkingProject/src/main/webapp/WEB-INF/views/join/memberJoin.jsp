@@ -47,7 +47,7 @@
 		});
 
 		//아이디 유효성 검사
-		memberId.keyup(function() {
+		/* memberId.keyup(function() {
 
 			if (regMemberId.test(memberId.val()) != true) {
 				$("#idCheck").html("숫자+영문 8~13입력 해주세요");
@@ -60,7 +60,7 @@
 				return true;
 			}
 
-		});
+		}); */
 		//비밀번호 유효성 검사
 		memberPwd.keyup(function() {
 			if (regMemberPwd.test(memberPwd.val()) != true) {
@@ -72,6 +72,7 @@
 				$("#passwdcheck").html("사용 가능한 비밀번호 입니다 ");
 				$("#passwdcheck").css("color", "blue");
 				return true;
+				p
 			}
 
 		});
@@ -104,32 +105,30 @@
 
 		});
 
-		//아이디 중복체크
-		idCheckBtn.click(function() {
-	
-
-		 	if (memberId.val()) {
-				//아이디값이 있는 경우
-				//ajax이용
-				$.ajax({
-					type : "post",
-					url : "idCheck.do",
-					data : {
-						memberId:memberId
-					},
-					success : function(data) {
-						if (data = 1) {
-							//사용할수 없음
-							alert("사용할 수 없는 아이디입니다");
-							memberId.val("");
-						} else {
-							//사용할 수  있는 아이디
-							alert("사용 할 수 있는 아이디입니다")
-						}
+		//아이디 중복체크 메소드
+		function idConfirm() {
+			
+			/* var memberId={id:$("#memberId").val()} */
+			
+			$.ajax({
+				url : "/join/idCheck.do",
+				type : "POST",
+				data : $("#memberJoinForm").serialize(),
+				error : function() {
+					alert("시스템 오류 입니다. 관리자에게 문의 하세요" );
+				},
+				success : function(resultData) {
+					if (resultData == "1") {
+						alert("이미 사용중인 아이디입니다")
+					} else {
+						alert("사용 가능한 아이디입니다");
 					}
+				}
+			});
 
-				});
+		}
 
+<<<<<<< HEAD
 			} else {//아이디 입력하지 않고 버튼클릭시
 				alert("아이디를 입력하세요");
 				memberId.focus();
@@ -176,6 +175,12 @@ $(function(){
 })
 
 >>>>>>> origin/ilhyun
+=======
+		//아이디 중복체크
+		$("#idCheckBtn").click(function() {
+			idConfirm();
+		});
+>>>>>>> origin/taejun
 
 	});
 </script>
@@ -184,15 +189,32 @@ $(function(){
 <body>
 	<section id="joinFormSection">
 <<<<<<< HEAD
+<<<<<<< HEAD
 		<form action="insertMember.do" method="post" id="memberJoinForm">
+=======
+		
+>>>>>>> origin/taejun
 			<h1>회원가입</h1>
-			<label>이름</label> <input type="text" name="memberName"
-				id="memberName" size="6" maxlength="6" required="required"
-				autofocus="autofocus"> <label><span id="namecheck"></span>
-				<br> 아이디 </label> <input type="text" name="memberId" id="memberId"
+			
+			<!-- <form id="memId" name="memId">
+			<label>아이디 </label> <input type="text" name="memberId" id="memberId"
 				size="13" maxlength="13" required="required"> <input
 				type="button" id="idCheckBtn" value="중복 체크"><span
-				id="idCheck"></span> <br> <label>비밀번호</label><input
+				id="idCheck"></span>
+			</form> -->
+			
+			
+	
+			
+			<br>
+			<form action="insertMember.do" method="post" id="memberJoinForm" name="memberJoinForm">
+			<label>이름</label> <input type="text" name="memberName"
+				id="memberName" size="6" maxlength="6" required="required"
+				autofocus="autofocus"> <span id="namecheck"></span>
+				<br>		<label>아이디 </label> <input type="text" name="memberId" id="memberId"
+				size="13" maxlength="13" required="required"> <input
+				type="button" id="idCheckBtn" value="중복 체크"><span
+				id="idCheck"></span><br>  <label>비밀번호</label><input
 				type="password" id="memberPwd" name="memberPwd" required="required"
 				size="13" maxlength="13"> <span id="passwdcheck"></span><br>
 			<label>비밀번호 확인</label><input type="password" id="memberPwd2"
