@@ -1,11 +1,16 @@
 package com.parking.member.controller;
 
+import java.util.HashMap;
+import java.util.Map;
+
 import javax.security.auth.message.callback.PrivateKeyCallback.Request;
 
+import org.apache.ibatis.mapping.ResultMap;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.ModelAttribute;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
@@ -22,14 +27,14 @@ public class MemberJoinController {
 	@Autowired
 	private MemberJoinService memberJoinService;
 
-	//회원가입 페이지 폼 출력
+	// 회원가입 페이지 폼 출력
 	@RequestMapping(value = "/memberJoin")
 	public String MemberJoinForm() {
 
 		return "join/memberJoin";
 	}
 
-	//회원 등록
+	// 회원 등록
 	@RequestMapping(value = "/insertMember", method = RequestMethod.POST)
 	public String insertMember(@ModelAttribute MemberVO param) {
 
@@ -42,14 +47,19 @@ public class MemberJoinController {
 
 		return "join/memberJoin";
 	}
-	
-	//아이디 중복검사
-	
-	@RequestMapping(value="/idCheck",method = RequestMethod.GET)
-    public String idCheck(@ModelAttribute MemberVO vo, Model model){
-	    System.out.println(vo.getMemberId());
-		int data=memberJoinService.idCheck(vo.getMemberId());
-		model.addAttribute("result", data);
-		return "join/memberJoin";
+
+	// 아이디 중복검사
+	@RequestMapping(value = "/idCheck", method = RequestMethod.POST)
+	@ResponseBody
+	public String idCheck(@ModelAttribute MemberVO memberVo) {
+
+		System.out.println("check" + memberVo.getMemberId());
+		int result = 0;
+
+		result = memberJoinService.idCheck(memberVo);
+
+		return result + "";
+
 	}
+
 }

@@ -20,6 +20,14 @@
 		</repository>
 	</repositories>
 	<dependencies>
+	
+	<!--Jason(Jackson -->
+		<dependency>
+			<groupId>com.fasterxml.jackson.core</groupId>
+			<artifactId>jackson-databind</artifactId>
+			<version>2.6.1</version>
+		</dependency>
+	
 		<!-- OJDBC -->
 		<dependency>
 			<groupId>com.oracle</groupId>

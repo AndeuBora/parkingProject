@@ -5,5 +5,5 @@ import com.parking.member.vo.MemberVO;
 public interface MemberJoinService {
 
 	public int insertMember(MemberVO param);
-	public int idCheck(String memberId);
+	public int idCheck(MemberVO memberVo);
 }
