@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.parking.member.dao.memberJoinDAO">
+
+	<insert id="insertMember" parameterType="com.parking.member.vo.MemberVO">
+		<!-- <selectKey keyProperty="memberNumSeq" resultType="int" order="BEFORE"> 
+			select memberNumSeq.nextval from dual </selectKey> -->
+
+		insert into
+		member(membernum,memberid,memberpwd,membername,memberphone,memberemail,memberpolicy)
+		values(memberNumSeq.nextval,#{memberId},#{memberPwd},#{memberName},#{memberPhone},#{memberEmail},1)
+	</insert>
+
+<select id="idCheck" parameterType="java.lang.String" resultType="int">
+
+select count(*)
+from member
+where memberId=#{memberId}
+
+</select>
+</mapper>
