@@ -8,6 +8,18 @@
 		resultType="com.parking.booking.vo.BookingVO">
 		select bookingSpot
 		from booking
-		where bookingDate = #{selectDate}
+		where bookingDate =
+		#{selectDate}
+	</select>
+
+	<insert id="insertBooking" parameterType="com.parking.booking.vo.BookingVO">
+		insert into booking
+		(bookingNum,paymentNum,bookingState,bookingName,bookingPhone,bookingMoney,bookingDiscount,bookingSpot,applicationDate,bookingDate,bookingPolicy)
+		values(#{bookingNum},#{paymentNum},0,#{bookingName},#{bookingPhone},#{bookingMoney},#{bookingDiscount},#{bookingSpot},sysdate,#{bookingDate},1)
+	</insert>
+
+	<select id="selectBookingList" parameterType="com.parking.booking.vo.BookingVO">
+		select * from
+		booking where bookingNum=${bookingNum};
 	</select>
 </mapper>

@@ -63,8 +63,8 @@
 			alert("자리를 선택해주세요");
 			return;
 		}
-		location.href = "bookingDetail.do?bookingDate=" + date + "&bookingSpot="
-				+ spot;
+		location.href = "bookingDetail.do?bookingDate=" + date
+				+ "&bookingSpot=" + spot;
 	}
 </script>
 <title>예약날짜/자리 선택</title>
