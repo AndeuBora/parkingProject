@@ -7,4 +7,7 @@ import com.parking.booking.vo.BookingVO;
 public interface BookingDAO {
 	// 예약날짜자리조회
 	public List<BookingVO> selectBookingSpot(BookingVO vo);
+
+	// 예약추가
+	public int insertBooking(BookingVO vo);
 }

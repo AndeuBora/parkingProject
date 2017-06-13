@@ -1,57 +1,40 @@
 @CHARSET "UTF-8";
 
-#all{
-	border : 1px solid;
-	 padding-left: 5%;
+#all {
+	border: 1px solid;
+	padding-left: 5%;
 	padding-right: 5%;
-	
-
-
-	
 }
 
 header {
-	border : 1px solid;
-	height: 50;
+	border: 1px solid red;
+	height: 15%;
 	width: 90%;
-	padding: 1%;
+}
+
+#logo {
+	margin-right: 6%
+}
+
+.headerLogin {
+	float: right;
+	margin-top: 0;
+	margin-right: 4%;
+}
+
+.mainManu{
+	 margin-right: 3%
+}
+
+
+section {
+	border: 1px solid red;
+	height: 75%;
+	width: 90%;
 }
 
 footer {
-	border : 1px solid;
+	border: 1px solid red;
 	height: 10%;
-	width: 70%;
-	padding: 0 15% 0 15%;
-}
-
-#info {border : 1px solid;
-	height:50%;
-	width: 100%;
-}
-
-#img {border : 1px solid;
-	width: 20%;
-	height: 100%;
-	clear:right;
-	float: left;
-}
-
-#login {border : 1px solid;
-	height: 10%;
-	width: 70%;
-	padding: auto;
-	float: left;
-	clear: right;
-}
-
-#manu {border : 1px solid;
-	height: 50%;
-	width: 50%;
-	
-	 float: left;
-}
-
-section {
-	border : 1px solid;
-	margin: 40% 0 40% 0;
+	width: 90%;
 }
