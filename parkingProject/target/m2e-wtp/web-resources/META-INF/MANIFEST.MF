@@ -1,9 +1,5 @@
 Manifest-Version: 1.0
-<<<<<<< HEAD
 Built-By: alfo7-7
-=======
-Built-By: TaeJun
->>>>>>> origin/taejun
 Build-Jdk: 1.8.0_131
 Created-By: Maven Integration for Eclipse
 
