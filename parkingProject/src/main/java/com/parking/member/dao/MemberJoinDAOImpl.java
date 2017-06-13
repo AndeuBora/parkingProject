@@ -18,6 +18,7 @@ public class MemberJoinDAOImpl implements MemberJoinDAO {
 
 		return sqlSession.insert("insertMember", param);
 	}
+	
 
 	@Override
 	public int idCheck(MemberVO memberVo) {
