@@ -13,6 +13,9 @@
 </head>
 <body>
 <div>
+<img alt="주차장" src="">
+<img alt="입구" src="">
+<img alt="내부" src="">
 
 </div>
 </body>
