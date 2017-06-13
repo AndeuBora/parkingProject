@@ -24,9 +24,13 @@
 		});
 		//datepicker값 변경
 		$("#datepicker").change(function() {
-			alert("값변경");
+			$("button").css("background-color", "white");
+			$("button").css("color", "black");
 			var date = $("#datepicker").val();
 			$("#selectdate").val(date);
+			var selectDate = $("#selectdate").val();
+			//해당날짜 자리값 조회
+			ajaxspot(selectDate);
 		});
 		//자리값 얻어오기
 		$("button").click(function() {
@@ -40,9 +44,12 @@
 			}
 			if (spot != "**") {
 				$("button").css("background-color", "white");
+				$("button").css("color", "black");
 			}
+			var selectDate = $("#selectdate").val();
+			//해당날짜 자리값 조회
+			ajaxspot(selectDate);
 			var s = $(this).val();
-			alert("자리값변경");
 			$("#selectspot").val(s);
 			$("#selectmoney").val("30,000");
 			$(this).css("background-color", "red");
@@ -65,6 +72,32 @@
 		}
 		location.href = "bookingDetail.do?bookingDate=" + date
 				+ "&bookingSpot=" + spot;
+	}
+	//ajax자리조회
+	function ajaxspot(selectDate) {
+		//보낼값 저장
+		var Data = {
+			"selectDate" : selectDate
+		}
+		$.ajax({
+			url : "selectBookingSpot.do",
+			type : 'get',
+			data : Data,
+			success : function(list) {
+				$.each(list, function(idx, val) {
+					$("button").attr("disabled", false);
+					var spot = "";
+					spot = val.bookingSpot;
+					$("#" + spot).css("background-color", "black");
+					$("#" + spot).css("color", "white");
+					$("#" + spot).attr("disabled", true);
+				});
+			},
+			error : function(request, status, error) {
+				alert("code :" + request.status + "\n" + "message :"
+						+ request.responseText + "\n" + "error:" + error);
+			}
+		});
 	}
 </script>
 <title>예약날짜/자리 선택</title>

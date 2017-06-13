@@ -143,7 +143,7 @@
 	   } 
 	//뒤로가기
 	function backBookingSpot() {
-		history.go(-1);
+		location.href = "/booking/bookingSpot.do"
 	}
 </script>
 </head>
