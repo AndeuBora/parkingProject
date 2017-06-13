@@ -14,6 +14,17 @@ public class BookingVO {
 	private String applicationDate; // 신청일자
 	private String bookingDate; // 예약날짜
 	private int bookingPolicy; // 약관동의
+	
+	//jsp
+	private String selectDate; //선택조회날짜
+
+	public String getSelectDate() {
+		return selectDate;
+	}
+
+	public void setSelectDate(String selectDate) {
+		this.selectDate = selectDate;
+	}
 
 	// getset
 	public String getBookingNum() {

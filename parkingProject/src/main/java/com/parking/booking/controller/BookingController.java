@@ -1,9 +1,7 @@
 package com.parking.booking.controller;
 
-import java.text.ParseException;
-import java.text.SimpleDateFormat;
 import java.util.ArrayList;
-import java.util.Date;
+
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -13,10 +11,10 @@ import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.bind.annotation.ResponseBody;
 
 import com.parking.booking.service.BookingService;
 import com.parking.booking.vo.BookingVO;
-import com.parking.member.vo.MemberVO;
 
 @Controller
 @RequestMapping(value = "/booking")
@@ -25,7 +23,7 @@ public class BookingController {
 	private BookingService bookingService;
 
 	// 예약자리조회
-	@RequestMapping(value = "/selectBookingSpot")
+	@RequestMapping(value = "/bookingSpot")
 	public String selectBookingSpot() {
 		return "booking/bookingSpot";
 	}
@@ -52,31 +50,20 @@ public class BookingController {
 		return "booking/bookingDetail";
 	}
 
-	// 예약입력
-	@RequestMapping(value = "/bookingInsert", method = RequestMethod.GET)
-	public void bookingInsert(@ModelAttribute BookingVO vo, Model model) {
+	// 예약날짜 자리조회
+	@RequestMapping(value = "/selectBookingSpot", method = RequestMethod.GET)
+	@ResponseBody
+	public List<BookingVO> selectBookingSpot(@ModelAttribute BookingVO vo, Model model) {
 		// 테스트출력
-		System.out.println("-----------------------------------1");
-		System.out.println("예약자 이름=" + vo.getBookingName());
-		System.out.println("예약자 전화=" + vo.getBookingPhone());
-		System.out.println("예약금액=" + vo.getBookingMoney());
-		System.out.println("예약할인=" + vo.getBookingDiscount());
-		System.out.println("예약날짜=" + vo.getBookingDate());
-		System.out.println("예약자리=" + vo.getBookingSpot());
+		System.out.println("-----------------------------------");
+		System.out.println("selectDate=" + vo.getSelectDate());
 
-		// 예약번호
-		long coad = System.currentTimeMillis();
-		String BookingNum = String.valueOf(coad);
-		vo.setBookingNum(BookingNum);
-		System.out.println("예약번호=" + vo.getBookingNum());
-
-		// 있다고 가정-------------회원아이디,회원이름
-		List<String> memberInfo = new ArrayList<>();
-		memberInfo.add("dksemqh97");
-		memberInfo.add("안드보라");
-
-		int result = bookingService.insertBooking(vo);
-		System.out.println("result=" + result);
+		// 자리list
+		List<BookingVO> spot = bookingService.selectBookingSpot(vo);
+		for (int i = 0; i < spot.size(); i++) {
+			System.out.println("spot=" + spot.get(i).getBookingSpot());
+		}
+		return spot;
 	}
 
 	// 재차확인페이지
