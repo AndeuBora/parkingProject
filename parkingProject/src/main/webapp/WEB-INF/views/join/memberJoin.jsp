@@ -9,15 +9,7 @@
 <meta charset="UTF-8">
 <script src="http://code.jquery.com/jquery-latest.js"></script>
 <script type="text/javascript">
-<<<<<<< HEAD
-
-=======
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-=======
 $(function(){
-	
 	$("#memberName").focusout(function () {
 		var nameVal=$(this).val(),
 		nameRegex=  /^[가-힣]+$/;
