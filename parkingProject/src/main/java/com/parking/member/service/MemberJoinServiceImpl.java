@@ -29,4 +29,6 @@ public class MemberJoinServiceImpl implements MemberJoinService {
 		
 		return result;
 	}
+
+
 }
