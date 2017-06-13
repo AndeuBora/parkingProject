@@ -11,6 +11,7 @@
 <script type="text/javascript">
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 $(function(){
 	
@@ -53,6 +54,9 @@ $(function(){
 
 =======
 >>>>>>> origin/ilhyun
+=======
+
+>>>>>>> origin/taejun
 	//한글 입력 정규식 찾기
 	//영문+숫자 조합 정규식 찾기
 	//아이디 정규식 
@@ -151,7 +155,6 @@ $(function(){
 		//아이디 중복체크 메소드
 		function idConfirm() {
 			
-			/* var memberId={id:$("#memberId").val()} */
 			
 			$.ajax({
 				url : "/join/idCheck.do",
@@ -171,6 +174,7 @@ $(function(){
 
 		}
 
+<<<<<<< HEAD
 <<<<<<< HEAD
 			} else {//아이디 입력하지 않고 버튼클릭시
 				alert("아이디를 입력하세요");
@@ -217,18 +221,30 @@ $(function(){
 	});
 	
 })
-
->>>>>>> origin/ilhyun
 =======
+>>>>>>> origin/taejun
+
+			
+
+
 		//아이디 중복체크
 		$("#idCheckBtn").click(function() {
 			idConfirm();
 		});
+<<<<<<< HEAD
 >>>>>>> origin/taejun
 =======
 >>>>>>> 8b855ccc77b496ef3b8ee331a71bb5584d958dac
 >>>>>>> origin/ilhyun
+=======
+>>>>>>> origin/taejun
 
+		$("#sendEmail").click(function(){
+			
+			
+			
+		})
+		
 	});
 </script>
 <title>회원가입 페이지</title>
@@ -238,53 +254,18 @@ $(function(){
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 		<form action="insertMember.do" method="post" id="memberJoinForm">
 =======
-		
+=======
 >>>>>>> origin/taejun
-			<h1>회원가입</h1>
-			
-			<!-- <form id="memId" name="memId">
-			<label>아이디 </label> <input type="text" name="memberId" id="memberId"
-				size="13" maxlength="13" required="required"> <input
-				type="button" id="idCheckBtn" value="중복 체크"><span
-				id="idCheck"></span>
-			</form> -->
-			
-			
+		
 	
 			
-			<br>
-			<form action="insertMember.do" method="post" id="memberJoinForm" name="memberJoinForm">
-			<label>이름</label> <input type="text" name="memberName"
-				id="memberName" size="6" maxlength="6" required="required"
-				autofocus="autofocus"> <span id="namecheck"></span>
-				<br>		<label>아이디 </label> <input type="text" name="memberId" id="memberId"
-				size="13" maxlength="13" required="required"> <input
-				type="button" id="idCheckBtn" value="중복 체크"><span
-				id="idCheck"></span><br>  <label>비밀번호</label><input
-				type="password" id="memberPwd" name="memberPwd" required="required"
-				size="13" maxlength="13"> <span id="passwdcheck"></span><br>
-			<label>비밀번호 확인</label><input type="password" id="memberPwd2"
-				name="memberPwd2" required="required" size="13" maxlength="13"><span
-				id="passwdcheck2"></span> <br> <label>이메일</label><input
-				type="email" id="memberEmail" name="memberEmail"> <input
-				type="button" id="sendEnumber" name="sendEnumber" value="메일인증">
-			<br> <label>인증번호</label> <input type="text" id="writeEnumber"
-				name="writeEnumber" required="required" size="5" maxlength="5">
-			<input type="button" id="checkEnum" value="확인" onclick=""> <input
-				type="button" id="AgainEnumber" value="재발송" onclick=""> <br>
-			<label>연락처</label> <input type="text" id="memberPhone"
-				name="memberPhone" required="required" placeholder="010-XXXX-XXXX">
-			<span id="memberPhoneCheck"></span>
-			<div>
-				신규회원 등록 안내 <br> 1.아이디는 영문+숫자 조합 8자리 이상만 가능 <br> 2.비밀번호는
-				영문+숫자+특수문자조합 8자리 이상만 가능<br> 3.아이디 중복체크와 메일인증을 받아야지만 회원등록<br>
-				4.약관동의 사항에 모두 체크를 해야 회원등록
+			<h1>회원가입</h1>
 
-			</div>
-			<h2>약관 및 개인 정보 수집 동의</h2>
 
+<<<<<<< HEAD
 			<h4>이용 약관</h4>
 			<textarea class="" rows="10" cols="100" readonly="readonly"></textarea>
 			<br> <input type="checkbox" value="0" name="memberPolicy"
@@ -341,23 +322,63 @@ $(function(){
 2.비밀번호는 영문+숫자+특수문자조합  8자리 이상만 가능<br>
 3.아이디 중복체크와 메일인증을 받아야지만 회원등록<br>
 4.약관동의 사항에 모두 체크를 해야 회원등록
+=======
+>>>>>>> origin/taejun
 
-	</div>
-	<h2>약관 및 개인 정보 수집 동의</h2>
+			<br>
+			<form action="insertMember.do" method="post" id="memberJoinForm"
+				name="memberJoinForm">
+				<label>이름</label> <input type="text" name="memberName"
+					id="memberName" size="6" maxlength="6" required="required"
+					autofocus="autofocus"> <span id="namecheck"></span> <br>
+				<label>아이디 </label> <input type="text" name="memberId" id="memberId"
+					size="13" maxlength="13" required="required"> <input
+					type="button" id="idCheckBtn" value="중복 체크"><span
+					id="idCheck"></span><br> <label>비밀번호</label><input
+					type="password" id="memberPwd" name="memberPwd" required="required"
+					size="13" maxlength="13"> <span id="passwdcheck"></span><br>
+				<label>비밀번호 확인</label><input type="password" id="memberPwd2"
+					name="memberPwd2" required="required" size="13" maxlength="13"><span
+					id="passwdcheck2"></span> <br> <label>이메일</label><input
+					type="email" id="memberEmail" name="memberEmail"> 
+					 <button type="submit" id="sendEmail" name="sendEmail">메일인증</button> 
+					<!--  <input
+					type="button" id="sendEnumber" name="sendEnumber" value="메일인증"> --> 
+				<br> <label>인증번호</label> <input type="text" id="writeEnumber"
+					name="writeEnumber" required="required" size="5" maxlength="5">
+				<input type="button" id="checkEnum" value="확인" onclick=""> <input
+					type="button" id="AgainEnumber" value="재발송" onclick=""> <br>
+				<label>연락처</label> <input type="text" id="memberPhone"
+					name="memberPhone" required="required" placeholder="010-XXXX-XXXX">
+				<span id="memberPhoneCheck"></span>
+				<div>
+					신규회원 등록 안내 <br> 1.아이디는 영문+숫자 조합 8자리 이상만 가능 <br> 2.비밀번호는
+					영문+숫자+특수문자조합 8자리 이상만 가능<br> 3.아이디 중복체크와 메일인증을 받아야지만 회원등록<br>
+					4.약관동의 사항에 모두 체크를 해야 회원등록
+
+				</div>
+				<h2>약관 및 개인 정보 수집 동의</h2>
+
+				<h4>이용 약관</h4>
+				<textarea class="" rows="10" cols="100" readonly="readonly"></textarea>
+				<br> <input type="checkbox" value="0" name="memberPolicy"
+					id="memberPolicy1" required="required">위 약관에 동의합니다
+				<h4>개인정보 수집 이용 동의</h4>
+				<textarea rows="10" cols="100" readonly="readonly"></textarea>
+				<br> <input type="checkbox" value="0	" name="memberPolicy"
+					id="memberPolicy2" required>위 약관에 동의합니다
+				<h4>전자 금융거래 약관</h4>
+				<textarea rows="10" cols="100"></textarea>
+				<br> <input type="checkbox" value="0" name="memberPolicy"
+					id="memberPolicy3" readonly="readonly" required>위 약관에 동의합니다
+				<br> <input type="submit" id="joinBtn" name="joinBtn"
+					value="가입"> <input type="button" id="cancelBtn"
+					name="cancelBtn" value="취소" onclick="">
+			</form>
+	</section>
 	
-	<h4>이용 약관</h4>
-	<textarea class="" rows="10" cols="100"></textarea>
-	<br>
-	<input type="radio" value="" name="memberPolicy">위 약관에 동의합니다
-	<h4>개인정보 수집 이용 동의</h4>
-	<textarea rows="10" cols="100"></textarea>
-	<br>
-	<input type="radio" value="" name="memberPolicy">위 약관에 동의합니다
-	<h4>전자 금융거래 약관</h4>
-	<textarea rows="10" cols="100"></textarea>
-	<br>
-	<input type="radio" value="" name="memberPolicy">위 약관에 동의합니다
 	
+<<<<<<< HEAD
 	<br>
 	<input type="button" id="joinBtn" name="joinBtn" value="가입" onclick="">
 <input type="button" id="cancelBtn" name="cancelBtn" value="취소" onclick="">
@@ -416,6 +437,8 @@ $(function(){
 	</section>
 >>>>>>> 8b855ccc77b496ef3b8ee331a71bb5584d958dac
 >>>>>>> origin/ilhyun
+=======
+>>>>>>> origin/taejun
 
 </body>
 </html>
