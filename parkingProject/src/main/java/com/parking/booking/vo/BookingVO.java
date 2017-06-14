@@ -1,6 +1,8 @@
 package com.parking.booking.vo;
 
-public class BookingVO {
+import com.parking.booking.paging.PagingVO;
+
+public class BookingVO extends PagingVO {
 	// 예약 12개필드
 	private String bookingNum; // 예약번호
 	private int memberNum; // 회원번호
@@ -14,9 +16,28 @@ public class BookingVO {
 	private String applicationDate; // 신청일자
 	private String bookingDate; // 예약날짜
 	private int bookingPolicy; // 약관동의
-	
-	//jsp
-	private String selectDate; //선택조회날짜
+
+	// jsp
+	private String selectDate; // 선택조회날짜
+	private String startDate; // 선택조회날짜
+	private String endDate; // 선택조회날짜
+
+	// getset
+	public String getStartDate() {
+		return startDate;
+	}
+
+	public void setStartDate(String startDate) {
+		this.startDate = startDate;
+	}
+
+	public String getEndDate() {
+		return endDate;
+	}
+
+	public void setEndDate(String endDate) {
+		this.endDate = endDate;
+	}
 
 	public String getSelectDate() {
 		return selectDate;
@@ -26,7 +47,6 @@ public class BookingVO {
 		this.selectDate = selectDate;
 	}
 
-	// getset
 	public String getBookingNum() {
 		return bookingNum;
 	}

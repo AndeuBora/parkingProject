@@ -13,6 +13,8 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
 
+import com.parking.booking.paging.Paging;
+import com.parking.booking.paging.Util;
 import com.parking.booking.service.BookingService;
 import com.parking.booking.vo.BookingVO;
 
@@ -98,5 +100,43 @@ public class BookingController {
 		// 값넘기기
 		model.addAttribute("paymentNum", paymentNum);
 		return "payment/payment";
+	}
+
+	/*-----------------------------myInfo----------------------------*/
+
+	// 전체 예약목록조회
+	@RequestMapping(value = "/myBooking")
+	public String myBooking(@ModelAttribute BookingVO vo, Model model) {
+		// 있다고 가정-------------회원번호로 조회
+		vo.setMemberNum(3);
+
+		// 페이징셋팅(초기값)
+		Paging.set(vo);
+		
+		System.out.println("page="+vo.getPage());
+		System.out.println("page size="+vo.getPageSize());
+		System.out.println("page s="+vo.getStartRow());
+		System.out.println("page e="+vo.getEndRow());
+		// 전체레코드 수
+		int total = bookingService.selectmyBookingListCnt(vo);
+		System.out.println("레코드total건수" + total);
+
+		int count = total - (Util.nvl(vo.getPage()) - 1) * (Util.nvl(vo.getPageSize()));
+		System.out.println("count" + count);
+		
+		// Query문
+		List<BookingVO> list = bookingService.selectMyBookingList(vo);
+		
+		//모델 값보내기
+		model.addAttribute("myBooking", list);
+		model.addAttribute("total", total);
+		model.addAttribute("count", count);
+		return "myInfo/myBooking";
+	}
+
+	// 예약취소넘겨줌
+	@RequestMapping(value = "/myBookingCancle")
+	public String bookingCancle() {
+		return "myInfo/myBookingCancle";
 	}
 }
