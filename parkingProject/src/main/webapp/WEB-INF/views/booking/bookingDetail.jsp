@@ -136,9 +136,7 @@
      } 
 	//값보내기
 	function goData() {
-		window.open("","pop","width=700,height=500 resizable=no")
 	      $("#f_booking").attr("action","bookingCheckAgain.do");
-		  $("#f_booking").attr("target","pop");
 	      $("#f_booking").submit();
 	   } 
 	//뒤로가기

@@ -18,8 +18,33 @@
 		values(#{bookingNum},#{paymentNum},0,#{bookingName},#{bookingPhone},#{bookingMoney},#{bookingDiscount},#{bookingSpot},sysdate,#{bookingDate},1)
 	</insert>
 
-	<select id="selectBookingList" parameterType="com.parking.booking.vo.BookingVO">
+	<!-- 나의예약목록조회 -->
+	<select id="selectMyBookingList" parameterType="com.parking.booking.vo.BookingVO"
+		resultType="com.parking.booking.vo.BookingVO">
 		select * from
-		booking where bookingNum=${bookingNum};
+		booking
+		<if test="memberNum">
+			where memberNum=#{memberNum}
+		</if>
+		<if test="startDate">
+			and bookingDate between #{startDate} and #{endDate}
+		</if>
+	</select>
+
+	<!-- 전체레코드 건수 -->
+	<select id="selectmyBookingListCnt" parameterType="com.parking.booking.vo.BookingVO"
+		resultType="int">
+		select nvl(count(1),0) from
+		booking
+		<trim prefix="where" prefixOverrides="and">
+			<if test="memberNum">
+				memberNum=#{memberNum}
+			</if>
+			<if test="startDate">
+				<if test="endDate">
+					AND bookingDate between #{startDate} and #{endDate}
+				</if>
+			</if>
+		</trim>
 	</select>
 </mapper>

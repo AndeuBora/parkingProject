@@ -35,7 +35,7 @@
 		String bookingDiscount = request.getParameter("discountState");
 		String TotalMoney = request.getParameter("totalBookingMoney");
 	%>
-	<form action="payment.do" method="post">
+	<form action="payment.do" method="post" id="f_bookingInfo">
 		<div id="bookingCheckInfo">
 			<h3>7.예약정보확인</h3>
 			<table>
@@ -105,13 +105,12 @@
 						name="BookingMoney" readonly></td>
 				</tr>
 			</table>
-			<label>위 기입사항이 정보와 일치합니다.<input type="checkbox"
+			<!-- <label>위 기입사항이 정보와 일치합니다.<input type="checkbox"
 				name="selectBookingPolicy" value="7" required
-				class="selectBookingPolicy"></label>
+				class="selectBookingPolicy"></label> -->
 		</div>
 		<div id="nextPayment1">
-			<input type="button" value="이전"><input type="submit"
-				value="다음">
+			<input type="button" value="이전"><input type="submit" value="다음">
 		</div>
 	</form>
 </body>

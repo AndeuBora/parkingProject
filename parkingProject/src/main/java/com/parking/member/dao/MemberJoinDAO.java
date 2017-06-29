@@ -6,4 +6,5 @@ public interface MemberJoinDAO {
 
 	public int insertMember(MemberVO param);
 	public int idCheck(MemberVO memberVo);
+	
 }

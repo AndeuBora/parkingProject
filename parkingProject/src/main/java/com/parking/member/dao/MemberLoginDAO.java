@@ -1,5 +1,9 @@
 package com.parking.member.dao;
 
-public interface MemberLoginDAO {
+import com.parking.member.vo.MemberVO;
 
+
+public interface MemberLoginDAO {
+	public String getPwd(MemberVO param);
+	public MemberVO memberData(MemberVO param);
 }

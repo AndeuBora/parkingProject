@@ -28,4 +28,16 @@ public class BookingDAOImpl implements BookingDAO {
 		return sqlSession.insert(NAMESPACE + ".insertBooking", vo);
 	}
 
+	@Override
+	public List<BookingVO> selectMyBookingList(BookingVO vo) {
+		// 나의예약조회
+		return sqlSession.selectList(NAMESPACE + ".selectMyBookingList", vo);
+	}
+
+	@Override
+	public int selectmyBookingListCnt(BookingVO vo) {
+		// 나의예약 전체건수
+		return sqlSession.selectOne(NAMESPACE+".selectmyBookingListCnt", vo);
+	}
+
 }
