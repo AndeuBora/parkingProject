@@ -24,4 +24,22 @@ public class BookingServiceImpl implements BookingService {
 		return dao.selectBookingSpot(vo);
 	}
 
+	@Override
+	public int insertBooking(BookingVO vo) {
+		// 예약추가
+		return dao.insertBooking(vo);
+	}
+
+	@Override
+	public List<BookingVO> selectMyBookingList(BookingVO vo) {
+		// 나의예약목록
+		return dao.selectMyBookingList(vo);
+	}
+
+	@Override
+	public int selectmyBookingListCnt(BookingVO vo) {
+		// 나의예약건수
+		return dao.selectmyBookingListCnt(vo);
+	}
+
 }

@@ -13,15 +13,22 @@ public class MemberJoinServiceImpl implements MemberJoinService {
 
 	@Autowired
 	private MemberJoinDAO memberJoinDAO;
-	
+
 	@Override
 	public int insertMember(MemberVO param) {
 		// TODO Auto-generated method stub
 		return memberJoinDAO.insertMember(param);
 	}
+
 	@Override
-	public int idCheck(String memberId) {
+	public int idCheck(MemberVO memberVo) {
 		// TODO Auto-generated method stub
-		return memberJoinDAO.idCheck(memberId);
+		int result=0;
+		
+		result=memberJoinDAO.idCheck(memberVo);
+		
+		return result;
 	}
+
+
 }

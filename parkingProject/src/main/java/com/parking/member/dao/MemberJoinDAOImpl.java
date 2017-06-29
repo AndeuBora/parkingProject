@@ -12,16 +12,20 @@ public class MemberJoinDAOImpl implements MemberJoinDAO {
 
 	@Inject
 	private SqlSession sqlSession;
-	
+
 	@Override
 	public int insertMember(MemberVO param) {
-		
-		return sqlSession.insert("insertMember",param);
+
+		return sqlSession.insert("insertMember", param);
 	}
 	
+
 	@Override
-	public int idCheck(String id) {
+	public int idCheck(MemberVO memberVo) {
 		// TODO Auto-generated method stub
-		return sqlSession.insert("idCheck",id);
+		int result = 0;
+
+		result=sqlSession.selectOne("idCheck", memberVo);
+		return result;
 	}
 }
