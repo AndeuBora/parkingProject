@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="memberManagement">
+
+	<select id="memberList" parameterType="com.parking.admin.vo.MemberVO"
+		resultType="com.parking.admin.vo.MemberVO">
+
+		select
+		*
+		from(
+		select list.*, rownum as rnum
+		from(
+		select
+		memberNum,memberId,memberName,memberPhone,memberEmail,to_char(memberDate,'YYYY-MM-DD')as
+		memberDate,memberType
+		from member
+
+
+		<trim prefix="where" prefixOverrides="and">
+
+			
+
+			<if test="memberType!=0">
+				memberType=#{memberType} 
+			</if>
+
+
+			<if test="memberName!='all'">
+			and	memberName LIKE'%'||#{memberName}||'%'
+				or memberId
+				LIKE'%'||#{memberName}||'%'
+
+			</if>
+
+		</trim>
+
+
+		order by memberNum desc
+		)list
+
+		)
+
+		<!--시작 레코드 종료 레코드 조건 -->
+		<where>
+			<if test="start_memberRow!=null and start_memberRow!=''">
+				<if test="end_memberRow!=null and end_memberRow!=''">
+					rnum between #{start_memberRow} and #{end_memberRow}
+				</if>
+
+			</if>
+
+		</where>
+
+
+
+	</select>
+
+	<!-- 전체 레코드 건수 -->
+	<select id="memberListCnt" resultType="int"
+		parameterType="com.parking.admin.vo.MemberVO">
+		select nvl(count(1),0)from
+		(
+		select lst.*,rownum as rnum
+		from
+		(
+		select *
+		from member
+		<trim prefix="where" prefixOverrides="and">
+			
+			
+			<if test="memberType!=0" >
+				memberType=#{memberType} 
+			</if>
+			<if test="memberName!='all'">
+			and	memberName LIKE'%'||#{memberName}||'%'
+	 			or memberId
+				LIKE'%'||#{memberName}||'%' 
+			</if>
+		</trim>
+		)lst
+		)
+	</select>
+
+</mapper>
