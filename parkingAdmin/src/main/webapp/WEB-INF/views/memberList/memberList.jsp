@@ -95,6 +95,7 @@ margin-bottom: 2%;
 <title>Insert title here</title>
 </head>
 <body>
+<jsp:include page="../header.jsp"></jsp:include>
 	<div class="container">
 		<section>
 			<div class="page-header">
@@ -190,5 +191,6 @@ margin-bottom: 2%;
 		<tag:paging page="${param.page }" total="${memberTotal }"
 			list_size="${data.pageSize }"></tag:paging>
 	</div>
+	<jsp:include page="../footer.jsp"></jsp:include>
 </body>
 </html>
