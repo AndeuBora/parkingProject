@@ -1,37 +1,12 @@
 package com.parking.qnaBoard.vo;
 
-import java.util.Date;
-
-public class QnaBoardVO {
-	private int qnaNum;
-	private int memberNum;
-	private int adminNum;
-	private String qnaTitle;
-	private String qnaContent;
-	private Date qnaWriteDate;
-	private int ref;
-	private int ref_level;
-	private int ref_step;
-	private int qnaWritePwd;
-
-	public QnaBoardVO() {
-		super();
-	}
-
-	public QnaBoardVO(int qnaNum, int memberNum, int adminNum, String qnaTitle, String qnaContent, Date qnaWriteDate,
-			int ref, int ref_level, int ref_step, int qnaWritePwd) {
-		super();
-		this.qnaNum = qnaNum;
-		this.memberNum = memberNum;
-		this.adminNum = adminNum;
-		this.qnaTitle = qnaTitle;
-		this.qnaContent = qnaContent;
-		this.qnaWriteDate = qnaWriteDate;
-		this.ref = ref;
-		this.ref_level = ref_level;
-		this.ref_step = ref_step;
-		this.qnaWritePwd = qnaWritePwd;
-	}
+public class QnaBoardVO extends PagingVO {
+	private int qnaNum = 0; // qna 글 번호
+	private String qnaTitle = ""; // qna 글 제목
+	private String qnaContent = ""; // qna 글 내용
+	private String qnaWriteDate = ""; // qna 글 작성일
+	private int qnaWritePwd = 0; // qna 글 비밀번호
+	private String memberId = ""; // 회원 아이디
 
 	public int getQnaNum() {
 		return qnaNum;
@@ -39,22 +14,6 @@ public class QnaBoardVO {
 
 	public void setQnaNum(int qnaNum) {
 		this.qnaNum = qnaNum;
-	}
-
-	public int getMemberNum() {
-		return memberNum;
-	}
-
-	public void setMemberNum(int memberNum) {
-		this.memberNum = memberNum;
-	}
-
-	public int getAdminNum() {
-		return adminNum;
-	}
-
-	public void setAdminNum(int adminNum) {
-		this.adminNum = adminNum;
 	}
 
 	public String getQnaTitle() {
@@ -73,36 +32,12 @@ public class QnaBoardVO {
 		this.qnaContent = qnaContent;
 	}
 
-	public Date getQnaWriteDate() {
+	public String getQnaWriteDate() {
 		return qnaWriteDate;
 	}
 
-	public void setQnaWriteDate(Date qnaWriteDate) {
+	public void setQnaWriteDate(String qnaWriteDate) {
 		this.qnaWriteDate = qnaWriteDate;
-	}
-
-	public int getRef() {
-		return ref;
-	}
-
-	public void setRef(int ref) {
-		this.ref = ref;
-	}
-
-	public int getRef_level() {
-		return ref_level;
-	}
-
-	public void setRef_level(int ref_level) {
-		this.ref_level = ref_level;
-	}
-
-	public int getRef_step() {
-		return ref_step;
-	}
-
-	public void setRef_step(int ref_step) {
-		this.ref_step = ref_step;
 	}
 
 	public int getQnaWritePwd() {
@@ -111,6 +46,14 @@ public class QnaBoardVO {
 
 	public void setQnaWritePwd(int qnaWritePwd) {
 		this.qnaWritePwd = qnaWritePwd;
+	}
+
+	public String getMemberId() {
+		return memberId;
+	}
+
+	public void setMemberId(String memberId) {
+		this.memberId = memberId;
 	}
 
 }
