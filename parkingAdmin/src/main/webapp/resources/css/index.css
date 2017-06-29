@@ -1,0 +1,40 @@
+@CHARSET "UTF-8";
+
+#all {
+	border: 1px solid;
+	padding-left: 5%;
+	padding-right: 5%;
+}
+
+header {
+	border: 1px solid red;
+	height: 15%;
+	width: 90%;
+}
+
+#logo {
+	margin-right: 6%
+}
+
+.headerLogin {
+	float: right;
+	margin-top: 0;
+	margin-right: 4%;
+}
+
+.mainManu{
+	 margin-right: 3%
+}
+
+
+section {
+	border: 1px solid red;
+	height: 75%;
+	width: 90%;
+}
+
+footer {
+	border: 1px solid red;
+	height: 10%;
+	width: 90%;
+}
