@@ -12,7 +12,7 @@ $(function(){
 	$("#okButton").click(function(){
 		
 		
-  location.href="/main.do";
+  location.href="/";
 	});
 	
 });

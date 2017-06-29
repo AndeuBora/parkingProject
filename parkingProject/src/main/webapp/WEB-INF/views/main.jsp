@@ -8,12 +8,22 @@
 <head>
 <meta charset="UTF-8">
 <script src="http://code.jquery.com/jquery-latest.js"></script>
-
+<script
+	src="http://ajax.googleapis.com/ajax/libs/jquery/1/jquery.min.js"></script>
+<script src="http://malsup.github.com/jquery.cycle2.js"></script>
+<link rel="stylesheet" href="/resources/css/index.css" />
 <title>Insert title here</title>
+
 </head>
 <body>
-<div>
-
-</div>
+	
+	<section id="main">
+		<div class="cycle-slideshow" id="parkingImage">
+			<img alt="주차장" src="resources/img/main/주차장.jpg"> <img alt="출구"
+				src="resources/img/main/출구.jpg"> <img alt="내부"
+				src="resources/img/main/내부.jpg">
+		</div>
+		<div id="offline"></div>
+	</section>
 </body>
 </html>
